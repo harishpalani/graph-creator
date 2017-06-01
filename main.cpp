@@ -19,9 +19,64 @@
  */
 
 #include <iostream>
+#include "Graph.h"
 
 using namespace std;
 
 int main() {
+    Graph graph;
+    while (true) {
+        char response;
+        cout << "\n1 | Add a vertex\n2 | Add an edge\n3 | Remove a vertex\n4 | Remove an edge\nq | quit" << endl;
+        cin >> response;
+        
+        if (response == '1') {
+            char label[16];
+            
+            cout << "Enter label: ";
+            cin.getline(label, 16);
+            
+            cout << "Status: ";
+            if (graph.addVertex(label) == true) { cout << "SUCCESS!" << endl; }
+            else { cout << "FAILED." << endl; }
+        } else if (response == '2') {
+            char label1[16], label2[16];
+            int weight;
+            
+            cout << "Enter first label: ";
+            cin.getline(label1, 16);
+            cout << "Enter second label: ";
+            cin.getline(label2, 16);
+            cout << "Enter weight: ";
+            cin >> weight;
+            
+            cout << "Status: ";
+            if (graph.addEdge(label1, label2, weight) == true) { cout << "SUCCESS!" << endl; }
+            else { cout << "FAILED." << endl; }
+        } else if (response == '3') {
+            char label[16];
+            
+            cout << "Enter label: ";
+            cin.getline(label, 16);
+            
+            cout << "Status: ";
+            if (graph.removeVertex(label) == true) { cout << "SUCCESS!" << endl; }
+        } else if (response == '4') {
+            char label1[16], label2[16];
+            int weight;
+            
+            cout << "Enter first label: ";
+            cin.getline(label1, 16);
+            cout << "Enter second label: ";
+            cin.getline(label2, 16);
+            
+            cout << "Status: ";
+            if (graph.removeEdge(label1, label2) == true) { cout << "SUCCESS!" << endl; }
+            else { cout << "FAILED." << endl; }
+        } else {
+            break;
+        }
+    }
+
     return 0;
 }
