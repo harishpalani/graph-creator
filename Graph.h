@@ -8,12 +8,13 @@ using namespace std;
 
 class Graph {
   public:
-    Graph();
-    ~Graph();
+    // Graph();
+    // ~Graph();
     bool addVertex(const char* c);
     bool removeVertex(const char* c);
     bool addEdge(const char* c1, const char* c2, int weight);
     bool removeEdge(const char* c1, const char* c2);
+    void printMatrix();
     
   private:
     // Helpers

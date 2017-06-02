@@ -34,33 +34,36 @@ int main() {
             char label[16];
             
             cout << "Enter label: ";
-            cin.getline(label, 16);
+            // cin.getline(label, 16);
+            cin >> label;
             
-            cout << "Status: ";
-            if (graph.addVertex(label) == true) { cout << "SUCCESS!" << endl; }
-            else { cout << "FAILED." << endl; }
+            if (graph.addVertex(label)) { cout << "Status: SUCCESS!" << endl; }
+            else { cout << "Status: FAILED." << endl; }
         } else if (response == '2') {
             char label1[16], label2[16];
             int weight;
             
             cout << "Enter first label: ";
-            cin.getline(label1, 16);
+            // cin.getline(label1, 16);
+            cin >> label1;
+            
             cout << "Enter second label: ";
-            cin.getline(label2, 16);
+            // cin.getline(label2, 16);
+            cin >> label2;
+            
             cout << "Enter weight: ";
             cin >> weight;
             
-            cout << "Status: ";
-            if (graph.addEdge(label1, label2, weight) == true) { cout << "SUCCESS!" << endl; }
-            else { cout << "FAILED." << endl; }
+            if (graph.addEdge(label1, label2, weight) == true) { cout << "Status: SUCCESS!" << endl; }
+            else { cout << "Status: FAILED." << endl; }
         } else if (response == '3') {
             char label[16];
             
             cout << "Enter label: ";
-            cin.getline(label, 16);
+            // cin.getline(label, 16);
+            cin >> label;
             
-            cout << "Status: ";
-            if (graph.removeVertex(label) == true) { cout << "SUCCESS!" << endl; }
+            if (graph.removeVertex(label) == true) { cout << "Status: SUCCESS!" << endl; }
         } else if (response == '4') {
             char label1[16], label2[16];
             int weight;
@@ -70,9 +73,8 @@ int main() {
             cout << "Enter second label: ";
             cin.getline(label2, 16);
             
-            cout << "Status: ";
-            if (graph.removeEdge(label1, label2) == true) { cout << "SUCCESS!" << endl; }
-            else { cout << "FAILED." << endl; }
+            if (graph.removeEdge(label1, label2) == true) { cout << "Status: SUCCESS!" << endl; }
+            else { cout << "Status: FAILED." << endl; }
         } else {
             break;
         }
