@@ -21,13 +21,13 @@ class Graph {
     pair<vector<char*>, int> findShortestPath(const char* c1, const char* c2);
     
   private:
-    const int INFINITY;
-    // Helpers
-    int index(vector<char*> &content, const char* c); // Get index of the desired content within the graph
-    
     // Variables
+    const int INFINITY;
     vector<char*> content;
     vector<vector<int>*> adjacencyMatrix;
+    
+    // Helpers
+    int index(vector<char*> &content, const char* c); // Get index of the desired content within the graph
 };
 
 #endif

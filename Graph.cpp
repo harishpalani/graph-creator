@@ -56,10 +56,11 @@ bool Graph::addEdge(const char* c1, const char* c2, int weight) {
 
 bool Graph::removeEdge(const char* c1, const char* c2) {
     // If either is nonexistent, exit
-    if (index(content, c1) == -1 || index(content, c2) == -2) { return false; }
+    if (index(content, c1) == -1 || index(content, c2) == -1 || (*adjacencyMatrix[index(content, c1)])[index(content, c2)] == -1) { return false; }
     
-    vector<int> sub = *adjacencyMatrix[index(content, c1)];
-    sub[index(content, c2)] = -1;
+    /*vector<int> sub = *adjacencyMatrix[index(content, c1)];
+    sub[index(content, c2)] = -1;*/
+    (*adjacencyMatrix[index(content, c1)])[index(content, c2)] = -1;
     
     return true;
 }

@@ -34,7 +34,6 @@ int main() {
             char label[16];
             
             cout << "Enter label: ";
-            // cin.getline(label, 16);
             cin >> label;
             
             if (graph.addVertex(label)) { cout << "Status: SUCCESS!" << endl; }
@@ -44,11 +43,9 @@ int main() {
             int weight;
             
             cout << "Enter first label: ";
-            // cin.getline(label1, 16);
             cin >> label1;
             
             cout << "Enter second label: ";
-            // cin.getline(label2, 16);
             cin >> label2;
             
             cout << "Enter weight: ";
@@ -60,35 +57,30 @@ int main() {
             char label[16];
             
             cout << "Enter label: ";
-            // cin.getline(label, 16);
             cin >> label;
             
             if (graph.removeVertex(label) == true) { cout << "Status: SUCCESS!" << endl; }
         } else if (response == '4') {
             char label1[16], label2[16];
-            int weight;
             
             cout << "Enter first label: ";
-            cin.getline(label1, 16);
+            cin >> label1;
+            
             cout << "Enter second label: ";
-            cin.getline(label2, 16);
+            cin >> label2;
             
             if (graph.removeEdge(label1, label2) == true) { cout << "Status: SUCCESS!" << endl; }
             else { cout << "Status: FAILED." << endl; }
         } else if (response == '5') {
             char label1[16], label2[16];
             
-            cout << "Enter starting label: ";
-            // cin.getline(label1, 16);
+            cout << "Enter first label: ";
             cin >> label1;
             
-            cout << "Enter destination label: ";
-            // cin.getline(label2, 16);
+            cout << "Enter second label: ";
             cin >> label2;
             
             graph.pathPrint(label1, label2);
-            /*if (graph.findPath(label1, label2) == true) { cout << "Status: SUCCESS!" << endl; }
-            else { cout << "Status: FAILED." << endl; }*/
         } else if (response == '0') {
             graph.printMatrix();
         } else {
