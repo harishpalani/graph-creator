@@ -27,7 +27,7 @@ int main() {
     Graph graph;
     while (true) {
         char response;
-        cout << "\n1 | Add a vertex\n2 | Add an edge\n3 | Remove a vertex\n4 | Remove an edge\nq | quit" << endl;
+        cout << "\n1 | Add a vertex\n2 | Add an edge\n3 | Remove a vertex\n4 | Remove an edge\n5 | Find the shortest path\n0 | Print matrix\nq | quit" << endl;
         cin >> response;
         
         if (response == '1') {
@@ -75,6 +75,22 @@ int main() {
             
             if (graph.removeEdge(label1, label2) == true) { cout << "Status: SUCCESS!" << endl; }
             else { cout << "Status: FAILED." << endl; }
+        } else if (response == '5') {
+            char label1[16], label2[16];
+            
+            cout << "Enter starting label: ";
+            // cin.getline(label1, 16);
+            cin >> label1;
+            
+            cout << "Enter destination label: ";
+            // cin.getline(label2, 16);
+            cin >> label2;
+            
+            graph.pathPrint(label1, label2);
+            /*if (graph.findPath(label1, label2) == true) { cout << "Status: SUCCESS!" << endl; }
+            else { cout << "Status: FAILED." << endl; }*/
+        } else if (response == '0') {
+            graph.printMatrix();
         } else {
             break;
         }
